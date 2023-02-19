@@ -17,7 +17,11 @@ class CounterHome extends ConsumerWidget {
           child: Consumer(
             builder: (context, ref, _) {
               final count = ref.watch(counterProvider);
-              return Text("$count");
+              return Text(
+                "final count is: $count",
+                style:
+                    const TextStyle(fontSize: 30, fontWeight: FontWeight.w400),
+              );
             },
           ),
         ),
