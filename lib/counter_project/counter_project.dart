@@ -23,17 +23,20 @@ class CounterHome extends ConsumerWidget {
         ),
         floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            FloatingActionButton.extended(
-                onPressed: () {
-                  ref.read(counterProvider.notifier).state--;
-                },
-                label: const Icon(Icons.remove)),
-            FloatingActionButton.extended(
-                onPressed: () {
-                  ref.read(counterProvider.notifier).state++;
-                },
-                label: const Icon(Icons.add)),
+            FloatingActionButton(
+              onPressed: () {
+                ref.read(counterProvider.notifier).state--;
+              },
+              child: const Icon(Icons.remove),
+            ),
+            FloatingActionButton(
+              onPressed: () {
+                ref.read(counterProvider.notifier).state++;
+              },
+              child: const Icon(Icons.add),
+            ),
           ],
         ),
       ),
